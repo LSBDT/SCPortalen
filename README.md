@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Single-cell centric database
+**Single-cell centric database**
+http://single-cell.clst.riken.jp
 
 Single-cell omics recently emerged as powerful tools to investigate heterogeneity of large populations of cells. Among others, improvements in sequencing, microscopy and microfluidic technologies let to a rapid increase of complex datasets with single-cell resolution. However, due to a lack of available platforms to easily share and integrate complex single-cell datasets, the accessibility of such datasets can be a barrier to efficient usage. The number of publication in the area of single-cell increased in the recent years. Still we are lacking public single-cell database to facilitate and enable researchers to access and explore published single-cell datasets.
 
@@ -14,7 +15,10 @@ To address the above issue, we introduced a single-cell data integration platfor
   - git (ver 2.21.1) https://github.com
   - sqlite3 (ver 3.30.1) https://www.sqlite.org/index.html
   - perl (v5.18.4) https://www.perl.org/
-  - (moirai2 https://github.com/moirai2/moirai2 contained in this directory)
+  - moirai2 (bandled in this git) https://github.com/moirai2/moirai2
+* Computer
+  - 100GB of disk space to store mouse and human genome STAR indexes.
+  - ~27GB RAM for STAR alignment.
 
 ## Download
 
@@ -28,11 +32,13 @@ To address the above issue, we introduced a single-cell data integration platfor
 
 ### Setup
 
+* Go to SCPortalen/ directory and type in a following command to setup.  It might take an hour depending on the network and CPU power.
+
 > SCPortalen.sh setup
 
 * Download genome
-  - human genome https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
-  - mouse genome https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz
+  - human genome (938MB) https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
+  - mouse genome (830M) https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz
   - human ribosomal DNA https://www.ncbi.nlm.nih.gov/nuccore/555853
   - mouse ribosomal DNA https://www.ncbi.nlm.nih.gov/nuccore/BK000964.1
 * Install softwares
@@ -40,13 +46,13 @@ To address the above issue, we introduced a single-cell data integration platfor
   - STAR https://github.com/alexdobin/STAR/
   - samtools http://samtools.sourceforge.net/
   - bedtools https://bedtools.readthedocs.io/en/latest/
-  - kraken (not yet) https://ccb.jhu.edu/software/kraken/
+  - kraken (not implemented yet) https://ccb.jhu.edu/software/kraken/
 * Create STAR index files
-  - human genome
-  - mouse genome
+  - human genome (30GB?)
+  - mouse genome (30GB?)
 
 ### Submit
 
-> SCPortalen.sh submit ACCESSIONID
+* Submit ACCESSION ID (DRA001287, GSE90487, E-MTAB-3543, PRJEB8994) and start running workflow.
 
-* Submit ACCESSION ID (DRA001287, GSE90487, E-MTAB-3543, PRJEB8994).
+> SCPortalen.sh submit ACCESSIONID
