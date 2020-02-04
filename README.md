@@ -28,16 +28,16 @@ click "Clone of download" and click
 
   SCPortalen.sh setup
 
-* Download tagdust, STAR, samtools, bedtools
+* Download
+  * tagdust http://tagdust.sourceforge.net
+  * STAR https://github.com/alexdobin/STAR
+  * samtools http://samtools.sourceforge.net
+  * bedtools https://bedtools.readthedocs.io/en/latest/
+  * kraken https://ccb.jhu.edu/software/kraken/
 * Download human genome (hg38) and mouse genome (mm10) from UCSC.
 * Download human and mouse ribosomalDNA.
 * Create index for human and mouse genome
 
-  SCPortalen.sh submit ACCESSIONID - Submit accession ID.
+  SCPortalen.sh submit ACCESSIONID
 
-## Example
-
-  SCPortalen.sh submit DRA001287
-  SCPortalen.sh submit GSE90487
-  SCPortalen.sh submit E-MTAB-3543
-  SCPortalen.sh submit PRJEB8994
+* Submit accession ID (DRA001287, GSE90487, E-MTAB-3543, PRJEB8994).
