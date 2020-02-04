@@ -10,34 +10,43 @@ To address the above issue, we introduced a single-cell data integration platfor
 
 ## Requirement
 
-* git (ver 2.21.1) https://github.com
-* sqlite3 (ver 3.30.1) https://www.sqlite.org/index.html
-* perl (v5.18.4) https://www.perl.org/
+* Tools
+  - git (ver 2.21.1) https://github.com
+  - sqlite3 (ver 3.30.1) https://www.sqlite.org/index.html
+  - perl (v5.18.4) https://www.perl.org/
+  - (moirai2 https://github.com/moirai2/moirai2 contained in this directory)
 
 ## Download
 
-Type a command in a prompt window (DIR=directory to install):
+* Type a command in a prompt window (DIR=directory to install):
 
-git clone https://github.com/LSBDT/SCPortalen.git DIR
+> git clone https://github.com/LSBDT/SCPortalen.git DIR
 
-OR
-
-click "Clone of download" and click
+* OR click "**Clone or download**" and click.
 
 ## Usage
 
-  SCPortalen.sh setup
+### Setup
 
-* Download tagdust, STAR, samtools, bedtools
-* Download human genome (hg38) and mouse genome (mm10) from UCSC.
-* Download human and mouse ribosomalDNA.
-* Create index for human and mouse genome
+> SCPortalen.sh setup
 
-  SCPortalen.sh submit ACCESSIONID - Submit accession ID.
+* Download genome
+  - human genome https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.fa.gz
+  - mouse genome https://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz
+  - human ribosomal DNA https://www.ncbi.nlm.nih.gov/nuccore/555853
+  - mouse ribosomal DNA https://www.ncbi.nlm.nih.gov/nuccore/BK000964.1
+* Install softwares
+  - tagdust http://tagdust.sourceforge.net/
+  - STAR https://github.com/alexdobin/STAR/
+  - samtools http://samtools.sourceforge.net/
+  - bedtools https://bedtools.readthedocs.io/en/latest/
+  - kraken (not yet) https://ccb.jhu.edu/software/kraken/
+* Create STAR index files
+  - human genome
+  - mouse genome
 
-## Example
+### Submit
 
-  SCPortalen.sh submit DRA001287
-  SCPortalen.sh submit GSE90487
-  SCPortalen.sh submit E-MTAB-3543
-  SCPortalen.sh submit PRJEB8994
+> SCPortalen.sh submit ACCESSIONID
+
+* Submit ACCESSION ID (DRA001287, GSE90487, E-MTAB-3543, PRJEB8994).
