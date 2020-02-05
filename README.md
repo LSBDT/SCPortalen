@@ -12,10 +12,12 @@ To address the above issue, we introduced a single-cell data integration platfor
 ## Requirement
 
 * Tools
+  - gcc (ver 9.2) https://gcc.gnu.org
   - git (ver 2.21.1) https://github.com
   - sqlite3 (ver 3.30.1) https://www.sqlite.org/index.html
   - perl (v5.18.4) https://www.perl.org/
-  - moirai2 (bandled in this git) https://github.com/moirai2/moirai2
+  - python (v3.7) https://www.python.org
+  - moirai2 (bundled) https://github.com/moirai2/moirai2
 * Computer
   - 100GB of disk space to store mouse and human genome STAR indexes.
   - ~27GB RAM for STAR alignment.
@@ -46,6 +48,8 @@ To address the above issue, we introduced a single-cell data integration platfor
   - STAR https://github.com/alexdobin/STAR/
   - samtools http://samtools.sourceforge.net/
   - bedtools https://bedtools.readthedocs.io/en/latest/
+  - edirect https://www.ncbi.nlm.nih.gov/books/NBK179288/
+  - SRAToolkit https://github.com/ncbi/sra-tools/wiki/HowTo:-Binary-Installation
   - kraken (not implemented yet) https://ccb.jhu.edu/software/kraken/
 * Create STAR index files
   - human genome (30GB?)
@@ -53,6 +57,15 @@ To address the above issue, we introduced a single-cell data integration platfor
 
 ### Submit
 
-* Submit ACCESSION ID (DRA001287, GSE90487, E-MTAB-3543, PRJEB8994) and start running workflow.
+* Submit accessionID (example: DRA001287, GSE90487, E-MTAB-3543, PRJEB8994) and start running data processing.
 
 > SCPortalen.sh submit ACCESSIONID
+
+* Converting userdefinedid to studyid
+* Retrieving runinfo and summary files
+* Importing species and runinfo to database
+* Downloading fastq files
+* Filtering ribosomalRNA
+* Aligning to genome
+* Remove multimap from unmap
+* Filter artifacts from unmap
